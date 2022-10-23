@@ -1,0 +1,28 @@
+version: "3.5"
+
+networks:
+  b0:
+    driver: bridge
+
+services:
+  node:
+    build:
+      context: ./
+      dockerfile: ./u22-dockerfile
+    image: u22
+    volumes:
+      - type: bind
+        source: .
+        target: /work
+      - type: bind
+        source: ./export
+        target: /export
+      - type: bind
+        source: /lib/modules
+        target: /lib/modules
+    networks:
+      - b0
+    privileged: true
+    cap_add:
+      - ALL
+
