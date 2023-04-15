@@ -1,4 +1,4 @@
-# Ubuntu 22.04 LTS in Docker (v2.0)
+# Ubuntu 22.04 LTS in Docker (v2.1)
 
 ## Using u22-docker
 
