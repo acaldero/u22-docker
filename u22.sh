@@ -2,7 +2,7 @@
 #set -x
 
 #
-#  Copyright 2019-2023 Saul Alonso Monsalve, Felix Garcia Carballeira, Jose Rivadeneira Lopez-Bravo, Alejandro Calderon Mateos,
+#  Copyright 2019-2024 Saul Alonso Monsalve, Felix Garcia Carballeira, Jose Rivadeneira Lopez-Bravo, Alejandro Calderon Mateos,
 #
 #  This file is part of U22 proyect.
 #
@@ -86,9 +86,9 @@ do
 
 		# Start container cluster (single node)
 		echo "Building containers..."
-		docker-compose -f u22-dockercompose.yml up -d --scale node=$1
+		docker compose -f u22-dockercompose.yml up -d --scale node=$1
 		if [ $? -gt 0 ]; then
-		    echo ": The docker-compose command failed to spin up containers."
+		    echo ": The docker compose command failed to spin up containers."
 		    echo ": * Did you execute git clone https://github.com/acaldero/u22-docker.git?."
 		    echo ""
 		    exit
@@ -125,9 +125,9 @@ do
 	     stop)
 		# Stopping containers
 		echo "Stopping containers..."
-		docker-compose -f u22-dockercompose.yml down
+		docker compose -f u22-dockercompose.yml down
 		if [ $? -gt 0 ]; then
-		    echo ": The docker-compose command failed to stop containers."
+		    echo ": The docker compose command failed to stop containers."
 		    echo ": * Did you execute git clone https://github.com/acaldero/u22-docker.git?."
 		    echo ""
 		    exit
